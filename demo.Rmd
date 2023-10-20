@@ -2,3 +2,4 @@
 Title: "Demonstation of 'get_mode' function"
 ---
 
+R does not have a built in mode function. Being able to calculate the modal value of a variable with a function is useful, for example, when setting covariates at a constant value to calculate predicted probabilities. 
