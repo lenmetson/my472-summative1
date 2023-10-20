@@ -1,5 +1,5 @@
 # Define function to take the mode of a given vector
-get_mode <- function(data, return_table){ 
+get_mode <- function(data, return_table = FALSE){ 
     if(is.vector(data) == FALSE) { # Check that the data is a vector, and print out an error message if it is not (for example the user has entered a whole data frame)
         print("Error: the object provided in the data argument is not a vector.")
     } 
@@ -16,7 +16,7 @@ get_mode <- function(data, return_table){
 }
 
 data("trees") # Load example data into workspace
-get_mode(data = quakes$station, return_table = FALSE) # Test function
-get_mode(data = quakes, return_table = FALSE) # Test error message
+get_mode(data = quakes$station) # Test function
+get_mode(data = quakes) # Test error message
 
 get_mode(data = quakes$station, return_table = TRUE)
