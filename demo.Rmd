@@ -1,0 +1,4 @@
+---
+Title: "Demonstation of 'get_mode' function"
+---
+
