@@ -1,3 +1,13 @@
+---
+title: "Demonstation of 'get_mode' function"
+---
+
+R does not have a built in mode function. Being able to calculate the modal value of a variable with a function is useful, for example, when setting covariates at a constant value to calculate predicted probabilities. 
+
+The following function finds the mode of a given vector provided by the `data` argument. 
+
+
+```{r}
 # Define function to take the mode of a given vector
 get_mode <- function(data, return_table = FALSE){ 
     if(is.vector(data) == FALSE) { # Check that the data is a vector, and print out an error message if it is not (for example the user has entered a whole data frame)
@@ -16,9 +26,18 @@ get_mode <- function(data, return_table = FALSE){
         }  
     }
 }
+```
 
-data("trees") # Load example data into workspace
-get_mode(data = quakes$station) # Test function
-get_mode(data = quakes) # Test error message
+The second parameter `return_table` allows the user to return the full frequncy table, instead of the modal value. The code below runs the code as default (with `return_table = FALSE`). 
 
+```{r}
+get_mode(data = quakes$station)
+```
+
+The output simply returns `14` which is the modal station number in the dataset. 
+
+By contrast, when the `return_table` argument is set to `TRUE` the function shows the frequency of all values in the vector, ordered by frequency. 
+
+```{r}
 get_mode(data = quakes$station, return_table = TRUE)
+```
